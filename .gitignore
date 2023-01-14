@@ -2,6 +2,11 @@
 idea
 .DS_Store
 
+.coverage
+.testrepository/
+cover/
+.coverage*
+
 *.egg-info/
 .installed.cfg
 *.egg
