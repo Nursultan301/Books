@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'social_django',
+
     'store.apps.StoreConfig',
 ]
 
@@ -86,6 +88,12 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.github.GithubOAuth2',
+
+    'django.contrib.auth.backends.ModelBackend',
+)
 
 
 # Password validation
@@ -137,3 +145,8 @@ REST_FRAMEWORK = {
         'rest_framework.parsers.JSONParser',
     )
 }
+
+SOCIAL_AUTH_JSONFIELD_ENABLED = True
+
+SOCIAL_AUTH_GITHUB_KEY = '8d012ddfeedcbbf039fe'
+SOCIAL_AUTH_GITHUB_SECRET = '1ea566b992ee6c430d36a6db4df5bb014ff6e7eb'
